@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserRequestDTO {
-  
+
     @NotBlank(message = "This field is required.")
     @Column(name = "name")
     private String name;

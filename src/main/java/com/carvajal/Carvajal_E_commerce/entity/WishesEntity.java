@@ -1,0 +1,35 @@
+package com.carvajal.Carvajal_E_commerce.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "wishes")
+public class WishesEntity {
+  
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id_wishes")
+  private Long id_whises;
+
+  @ManyToOne
+  @JoinColumn(name = "id_user", nullable = false)
+  private UserEntity user;
+
+  @ManyToOne 
+  @JoinColumn(name = "id_product", nullable = false)
+  private ProductsEntity product;
+
+  @Column(name = "date_add")
+  private LocalDateTime date_add;
+}
