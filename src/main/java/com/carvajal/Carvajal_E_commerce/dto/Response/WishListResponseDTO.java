@@ -1,7 +1,5 @@
 package com.carvajal.Carvajal_E_commerce.dto.Response;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,10 +13,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class WishesResponseDTO {
+public class WishListResponseDTO {
   
-  private Long id_wishes;
+  private Long id_WishList;
   private Long id_user;
   private Long id_product;
-  private LocalDateTime date_add;
+  private String action;
 }
