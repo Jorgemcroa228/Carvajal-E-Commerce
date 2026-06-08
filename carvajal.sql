@@ -19,25 +19,25 @@ CREATE TABLE products (
 
 
 CREATE TABLE wishes (
-  id_deseo BIGINT AUTO_INCREMENT PRIMARY KEY,
+  id_wishes BIGINT AUTO_INCREMENT PRIMARY KEY,
   id_user BIGINT NOT NULL,
   id_product BIGINT NOT NULL,
-  fecha_agregado DATETIME DEFAULT CURRENT_TIMESTAMP,
-  
+  date_add DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (id_user) REFERENCES user(id_user),
   FOREIGN KEY (id_product) REFERENCES products(id_product)
 );
 
-CREATE TABLE historico_deseos (
-    id_historico BIGINT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE wish_list (
+    id_wishList BIGINT AUTO_INCREMENT PRIMARY KEY,
     id_user BIGINT NOT NULL,
     id_product BIGINT NOT NULL,
-    accion VARCHAR(20) NOT NULL,
-    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    action VARCHAR(20) NOT NULL,
+    date DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY (id_user) REFERENCES user(id_user),
     FOREIGN KEY (id_product) REFERENCES products(id_product)
 );
+
 
 INSERT INTO products(name, price, amount) 
 VALUES

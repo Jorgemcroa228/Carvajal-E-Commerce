@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class WishesREsponseDTO {
+public class WishesResponseDTO {
   
   private Long id_wishes;
   private LocalDateTime date_add;

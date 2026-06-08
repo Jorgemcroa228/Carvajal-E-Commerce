@@ -15,9 +15,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class WhisesRequestDto {
+public class WishesRequestDTO {
+
+  @NotBlank(message = "User id is required")
+  private Long id_User;
+
+  @NotBlank(message = "Product id is required")
+  private Long id_Product;
   
-  @NotBlank(message = "This field is required.")
-  @Column(name = "date_add")
-  private LocalDateTime date_add;
 }
