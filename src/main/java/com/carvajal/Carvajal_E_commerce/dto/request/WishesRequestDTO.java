@@ -1,8 +1,5 @@
 package com.carvajal.Carvajal_E_commerce.dto.request;
 
-import java.time.LocalDateTime;
-
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
