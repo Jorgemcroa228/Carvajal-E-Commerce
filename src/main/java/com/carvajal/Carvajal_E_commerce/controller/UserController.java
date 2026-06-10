@@ -11,6 +11,9 @@ import com.carvajal.Carvajal_E_commerce.service.UserService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -26,8 +29,9 @@ public class UserController {
   public UserEntity<MessageResponseDTO> createUser(@Valid @RequestBody UserRequestDTO userRequestDTO) {
 
     try {
-      MessageResponseDTO
-    }
+      MessageResponseDTO resposne = userService.createUser(userRequestDTO);
+      return ResponseEntity.status(HttpStatus.CREATED).body(resposne);
+    } catch ()
   }
   
 }
