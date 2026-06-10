@@ -12,16 +12,16 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class ProductsService {
-  
+
   private final ProductsRepository productRepository;
 
-    public List<ProductsEntity> getAllProducts() {
-        return productRepository.findAll();
-    }
+  public List<ProductsEntity> getAllProducts() {
+      return productRepository.findAll();
+  }
 
-    public ProductsEntity getProductById(Long id) {
-        return productRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Producto no encontrado"));
+  public ProductsEntity getProductById(Long id) {
+      return productRepository.findById(id)
+              .orElseThrow(() ->
+                      new RuntimeException("Producto no encontrado"));
     }
 }
