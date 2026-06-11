@@ -1,6 +1,6 @@
 package com.carvajal.Carvajal_E_commerce.entity;
 
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

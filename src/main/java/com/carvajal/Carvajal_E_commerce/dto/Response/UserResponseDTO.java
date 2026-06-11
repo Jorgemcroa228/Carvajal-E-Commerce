@@ -1,5 +1,7 @@
 package com.carvajal.Carvajal_E_commerce.dto.Response;
 
+import com.carvajal.Carvajal_E_commerce.enums.UserRole;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,9 +16,10 @@ import lombok.Setter;
 @Setter
 @Builder
 public class UserResponseDTO {
-  
+    
     private Long id_user;
     private String name;
     private String email;
     private String password;
+    private UserRole role;
 }

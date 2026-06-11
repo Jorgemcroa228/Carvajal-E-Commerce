@@ -1,5 +1,7 @@
 package com.carvajal.Carvajal_E_commerce.entity;
 
+import com.carvajal.Carvajal_E_commerce.enums.UserRole;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,4 +29,7 @@ public class UserEntity {
 
   @Column(name = "password")
   private String password;
+
+  @Column(name = "role")
+  private UserRole role;
 }

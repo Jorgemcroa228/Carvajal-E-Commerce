@@ -1,5 +1,7 @@
 package com.carvajal.Carvajal_E_commerce.dto.request;
 
+import com.carvajal.Carvajal_E_commerce.enums.UserRole;
+
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -26,4 +28,8 @@ public class UserRequestDTO {
     @NotBlank(message = "This field is required.")
     @Column(name = "password")
     private String password;
+
+    @NotBlank(message = "This field is required.")
+    @Column(name = "role")
+    private UserRole role;
 }
