@@ -1,12 +1,16 @@
 package com.carvajal.Carvajal_E_commerce.service;
 
+import java.util.Date;
+import java.util.Map;
+import java.util.function.Function;
+
 import javax.crypto.SecretKey;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.carvajal.Carvajal_E_commerce.entity.UserEntity;
+import com.carvajal.Carvajal_E_commerce.enums.UserRole;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -69,7 +73,7 @@ public class JwtService {
             Jwts.parser()
                 .verifyWith(getSigninKey())
                 .build()
-                .parseClaimsJws(token);
+                .parseSignedClaims(token);
             return true;
         } catch (JwtException e) {
             log.error("token invalido: " + e.getMessage());
@@ -92,8 +96,8 @@ public class JwtService {
         final Claims claims = Jwts.parser()
                 .verifyWith(getSigninKey())
                 .build()
-                .parseClaimsJws(token)
-                .getBody();
+                .parseSignedClaims(token)
+                .getPayload();
         return resolver.apply(claims);
     }
 
@@ -143,8 +147,8 @@ public class JwtService {
             claims = Jwts.parser()
                     .verifyWith(getSigninKey())
                     .build()
-                    .parseClaimsJws(token)
-                    .getBody();
+                    .parseSignedClaims(token)
+                    .getPayload();
         } catch (ExpiredJwtException e) {
             claims = e.getClaims();
         } catch (JwtException e) {
@@ -156,7 +160,7 @@ public class JwtService {
         UserEntity users = new UserEntity();
         users.setId_user(claims.get("userId", Number.class).longValue());
         users.setEmail(claims.getSubject());
-        users.setRole(User.valueOf(claims.get("role", String.class)));
+        users.setRole(UserRole.valueOf(claims.get("role", String.class)));
 
         return generatedToken(users);
     }

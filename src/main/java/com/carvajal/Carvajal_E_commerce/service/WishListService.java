@@ -22,7 +22,7 @@ public class WishListService {
    */
   public List<WishListEntity> getHistoryByUser(Long userId) {
 
-    return wishListRepository.findByUserIdUser(userId);
+    return wishListRepository.findByUserId_user(userId);
 }
 
   /**

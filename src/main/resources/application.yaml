@@ -16,12 +16,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-
+        
 server:
   port: 5001
   servlet:
