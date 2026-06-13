@@ -3,10 +3,10 @@ spring:
     name: Carvajal-E-commerce
 
   datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
+    url: mysql://root:kpQQpkOimKWIFLbdJKwTPfeXfdXHvhWV@mysql.railway.internal:3306/railway
+    driverClassName: 
     username: root
-    password: 123456789
+    password: kpQQpkOimKWIFLbdJKwTPfeXfdXHvhWV
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
